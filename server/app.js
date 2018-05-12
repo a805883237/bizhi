@@ -40,5 +40,5 @@ app.use(async ctx => {
 })
 
 app.listen(8080, function () {
-  console.log('server listen at port 3000')
+  console.log('server listen at port 8080')
 })
