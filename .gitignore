@@ -1,0 +1,4 @@
+.cache
+node_modules
+server/config.js
+ecosystem.json
