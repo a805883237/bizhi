@@ -25,6 +25,7 @@ export default class App extends React.Component {
       let imgs = json.data.imgs
       let imgList = imgs.map(item => ({
         _id: item._id,
+        urlKey: item.urlKey,
         url: `${baseUrl + item.urlKey}`
       }))
       this.setState({
@@ -57,7 +58,7 @@ export default class App extends React.Component {
             this.state.imgList.map(item => (
               <div className='item' key={item._id}>
                 <a href={item.url} target='_blank'><img src={`${item.url}?imageView2/1/w/${dpi * 400}/h/${dpi * 240}`} onLoad={e => this.loaded(e)}/></a>
-                <a href={item.url} download='image.jpg' className='download'>下载</a>
+                <a href={`${item.url}?attname=${item.urlKey}`} className='download'>下载</a>
               </div>
             ))
           }

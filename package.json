@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "parcel watch client/index.html",
-    "build": "rimraf dist && parcel build client/index.html",
+    "build": "rimraf .cache && rimraf dist && parcel build client/index.html",
     "server": "NODE_ENV=dev node server/app",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
