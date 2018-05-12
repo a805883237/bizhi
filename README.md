@@ -2,7 +2,10 @@
 
 ### 项目启动
 
-前端: npm start
+前端:
+
+- npm start: 开发启动
+- npm run build: 打包
 
 后端: npm run server
 
