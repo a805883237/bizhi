@@ -7,6 +7,7 @@ if (process.env.NODE_ENV !== 'production') {
   mongoose.set('debug', true)
   db = config.dbDev
 }
+console.log(db)
 mongoose.connect(db)
 
 mongoose.connection.on('disconnected', () => {

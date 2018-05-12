@@ -6,6 +6,7 @@ const Image = mongoose.model('Image')
 let perpage = 6
 
 router.get('/api/list', async ctx => {
+  console.log(req.request.path)
   let page = ctx.request.query.page || 0
   try {
     let imgLists = await Image.find({urlKey: { $exists: true }}, 'urlKey').skip(perpage * page).limit(perpage).sort('-_id')
