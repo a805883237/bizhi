@@ -1,0 +1,30 @@
+{
+  "apps": [
+    {
+      "name": "yourappname",
+      "script": "index.js",
+      "env": {
+        "COMMON_VARIABLE": "true"
+      },
+      "env_production": {
+        "NODE_ENV": "production"
+      }
+    }
+  ],
+  "deploy": {
+    "production": {
+      "user": "username",
+      "host": ["yourhostnameorip"],
+      "port" : "port",
+      "ref": "origin/master",
+      "repo": "git@github.com:newming/bizhi.git",
+      "path": "path",
+      "ssh_options": "StrictHostKeyChecking=no",
+      "pre-deploy-local": "echo 'Deploy Done!'",
+      "post-deploy": "npm install && pm2 startOrRestart ecosystem.json --env production",
+      "env": {
+        "NODE_ENV": "production"
+      }
+    }
+  }
+}
