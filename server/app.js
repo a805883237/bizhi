@@ -10,16 +10,16 @@ require('./db')
 
 const router = require('./router')
 
-// crawl task
-const crawl = require('./task/image')
-// qiniu task
-const qiniu = require('./task/qiniu')
+// // crawl task
+// const crawl = require('./task/image')
+// // qiniu task
+// const qiniu = require('./task/qiniu')
 
-var j = schedule.scheduleJob('* 0 * * *', function(){
-  console.log('start tasks');
-  crawl()
-  setTimeout(qiniu,5000)
-});
+// var j = schedule.scheduleJob('* 0 * * *', function(){
+//   console.log('start tasks');
+//   crawl()
+//   setTimeout(qiniu,5000)
+// });
 
 const app = new Koa()
 
@@ -34,7 +34,6 @@ app.use(serve(resolve(__dirname, '../')))
 app.use(views(resolve(__dirname, '../dist')), {
   extension: 'html'
 })
-
 app.use(async ctx => {
   await ctx.render('index.html')
 })

@@ -53,6 +53,7 @@ export default class App extends React.Component {
     let dpi = this.state.dpi
     return (
       <div>
+        <h1>hello world</h1>
         <div className='images-container'>
           {
             this.state.imgList.map(item => (
