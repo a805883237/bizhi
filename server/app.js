@@ -3,7 +3,7 @@ const logger = require('koa-logger')
 const { resolve } = require('path')
 const serve = require('koa-static')
 const views = require('koa-views')
-const schedule = require('node-schedule');
+// const schedule = require('node-schedule');
 
 // init db
 require('./db')
@@ -11,15 +11,15 @@ require('./db')
 const router = require('./router')
 
 // // crawl task
-const crawl = require('./task/image')
+// const crawl = require('./task/image')
 // // qiniu task
-const qiniu = require('./task/qiniu')
+// const qiniu = require('./task/qiniu')
 
-var j = schedule.scheduleJob('* 0 * * *', function(){
-  console.log('start tasks');
-  crawl()
-  setTimeout(qiniu,5000)
-});
+// var j = schedule.scheduleJob('* 0 * * *', function(){
+//   console.log('start tasks');
+//   crawl()
+//   setTimeout(qiniu,5000)
+// });
 
 const app = new Koa()
 
