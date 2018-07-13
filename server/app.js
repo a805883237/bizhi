@@ -10,14 +10,14 @@ require('./db')
 
 const router = require('./router')
 
-// // crawl task
-// const crawl = require('./task/image')
-// // qiniu task
+// crawl task
+const crawl = require('./task/image')
+// qiniu task
 // const qiniu = require('./task/qiniu')
 
 // var j = schedule.scheduleJob('* 0 * * *', function(){
 //   console.log('start tasks');
-//   crawl()
+  crawl()
 //   setTimeout(qiniu,5000)
 // });
 

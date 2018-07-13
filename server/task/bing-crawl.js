@@ -23,7 +23,7 @@ const reg = /\_\d+x\d+\.jpg$/
 
   const $ = cheerio.load(res)
 
-  let urls = Array.from($('.container .item .progressive__img')).map(item => item.attribs.src.replace(reg, '.jpg'))
+  let urls = Array.from($('.container .item .progressive__img')).map(item => item.attribs.src.replace(reg, '_1920x1080.jpg'))
   // console.log(result)
   let result = urls.map(item => {
     return {

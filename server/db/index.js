@@ -8,12 +8,19 @@ if (process.env.NODE_ENV !== 'production') {
   db = config.dbDev
 }
 console.log(db)
-mongoose.connect(db)
+mongoose.connect(db,function (err) {
+    if(err){
+        console.log('数据库连接失败：'+err);
+    }else {
+        console.log('数据库成功连接到：'+db);
+    }
+})
 
 mongoose.connection.on('disconnected', () => {
   throw new Error('数据库挂了')
 })
 mongoose.connection.on('error', err => {
+  console.log("ccccccccc",err)
   throw new Error('数据库挂了吧')
 })
 mongoose.connection.once('open', () => {
